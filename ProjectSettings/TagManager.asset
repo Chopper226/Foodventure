@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,3 +41,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back
+    uniqueID: 2939059323
+    locked: 0
+  - name: Land1
+    uniqueID: 125254593
+    locked: 0
+  - name: Land2
+    uniqueID: 2397068727
+    locked: 0
+  - name: Land3
+    uniqueID: 1786621783
+    locked: 0
+  - name: Route
+    uniqueID: 2820454737
+    locked: 0
+  - name: Game
+    uniqueID: 3079371823
+    locked: 0
+  - name: Entity
+    uniqueID: 2684763361
+    locked: 0
+  m_RenderingLayers:
+  - Default
