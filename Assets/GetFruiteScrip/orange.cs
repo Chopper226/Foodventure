@@ -34,7 +34,7 @@ public class orange : MonoBehaviour
             }
         }
 
-        if(pointCounter.score == 100 || plate.timeCount >= 60f){
+        if(pointCounter.score == 60 || plate.timeCount >= 60f){
             timer = 0f;
             gameover = true;
         }

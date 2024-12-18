@@ -20,7 +20,7 @@ public class fruitcoll : MonoBehaviour
             float x = UnityEngine.Random.Range( -16.29f , 0.25f);
             coll.gameObject.transform.position = new Vector3(x,811,0);
             pointCounter.score++;       //ScoreBoard這個class.的score全域變數
-			Debug.Log(pointCounter.score);//檢查變數有沒有加成功	           
+			      Debug.Log(pointCounter.score);//檢查變數有沒有加成功	           
         }
 
     }

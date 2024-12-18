@@ -31,7 +31,7 @@ public class plate : MonoBehaviour
                 this.transform.position += new Vector3(0, move * Time.deltaTime, 0);
             }
         }
-        if(pointCounter.score == 100 || timeCount >= 60f){
+        if(pointCounter.score == 60 || timeCount >= 60f){
             gameover = true;
         }
     }
