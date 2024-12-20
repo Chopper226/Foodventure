@@ -25,7 +25,7 @@ public class FoodController : MonoBehaviour{
             food.SetActive(true);
             food.name = food.name.Replace( "(Clone)" , "" ).Trim();
             food.transform.SetParent(transform);
-            food.transform.localScale = new Vector3(0.3f, 0.3f, 1);
+            food.transform.localScale = new Vector3(0.3f, 0.3f, -1);
         }
     }
 

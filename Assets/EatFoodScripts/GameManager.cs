@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour{
     void SpawnPlate( Vector2 position ){
         GameObject newPlate = Instantiate(platePrefab, position, Quaternion.identity);
         newPlate.SetActive(true);
-        foodController.SpawnFoodOnPlate( newPlate.transform);
+        foodController.SpawnFoodOnPlate( newPlate.transform );
         plates.Add( newPlate );
     }
 
