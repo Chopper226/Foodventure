@@ -8,10 +8,14 @@ public class GameManager : MonoBehaviour{
     public GameObject platePrefab; 
     public Button[] button;
     public float plateSpeed ;   
-    
+    public float timeRemaining ;
+    private bool isTimerRunning = false;
+
     public Text Score;
+    public Text timerText;
     public int score;
-    private List<GameObject> plates = new List<GameObject>(); 
+    private List<GameObject> plates = new List<GameObject>();
+    public Animator animator; 
     private bool isMoving = false;
     public FoodController foodController;
 
@@ -25,15 +29,25 @@ public class GameManager : MonoBehaviour{
         button[1].onClick.AddListener( () => btnClick(button[1].name));
         button[2].onClick.AddListener( () => btnClick(button[2].name));
         
+        isTimerRunning = true;
 
     }
 
     void btnClick( string name ){
+        animator.Play("Idle");
         if( plates != null ){
-            GameObject child = plates[0].transform.Find(name).gameObject;
-            if( child != null ){
-                Destroy(child);
-                score++;
+            try{
+                GameObject child = plates[0].transform.Find(name).gameObject;
+                if( child != null ){
+                    Destroy(child);
+                    score++;
+                    animator.SetTrigger("eat");
+                    animator.SetTrigger("idle");
+                }
+            }
+            catch{
+                animator.SetTrigger("jump");
+                animator.SetTrigger("idle");
             }
         }
     }
@@ -41,31 +55,39 @@ public class GameManager : MonoBehaviour{
 
     void Update(){
 
-        if( plates != null && plates[0].transform.childCount == 0 ){
-            isMoving = true;
-        }
-       
-        if( isMoving ){
-
-            if( plates[1].transform.position.x < 0){
-                MovePlates();
+        if( isTimerRunning ){
+            if( plates != null && plates[0].transform.childCount == 0 ){
+                isMoving = true;
             }
-            else{
-                isMoving = false;
-                Destroy(plates[0]);
-                plates.RemoveAt(0);
-                SpawnPlate(new Vector2(-10, 0) );
-            }
-        }
+        
+            if( isMoving ){
 
-        Score.text = $"Score \n {score}";
+                if( plates[1].transform.position.x < 0){
+                    MovePlates();
+                }
+                else{
+                    isMoving = false;
+                    Destroy(plates[0]);
+                    plates.RemoveAt(0);
+                    SpawnPlate(new Vector2(-10, -1) );
+                }
+            }
+
+
+            if (timeRemaining > 0) {
+                timeRemaining -= Time.deltaTime;
+                UpdateTimerText();
+            }
+            Score.text = $"Score : {score}";
+        }
+        
     }
 
     void initPlate(){
         Vector2[] platePositions = new Vector2[]{
-            new Vector2(0, 0),
-            new Vector2(-5, 0),
-            new Vector2(-10, 0)
+            new Vector2(0, -1),
+            new Vector2(-5, -1),
+            new Vector2(-10, -1)
         };
 
         foreach (var position in platePositions){
@@ -87,5 +109,10 @@ public class GameManager : MonoBehaviour{
         }
     }
 
+    void UpdateTimerText(){
+        int minutes = Mathf.FloorToInt(timeRemaining / 60);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
     
 }
