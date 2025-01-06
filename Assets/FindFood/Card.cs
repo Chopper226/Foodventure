@@ -34,6 +34,8 @@ public class Card : MonoBehaviour{
 
             if (Mathf.Abs(currentRotation - 120f) < 1f){
                 FlipCard(); 
+                isFlipped = false;
+                
             }
             else if( Mathf.Abs(currentRotation - 180f) < 1f ){
                 currentRotation = 180f;
@@ -48,21 +50,27 @@ public class Card : MonoBehaviour{
     }
 
     void OnMouseDown(){
-        if (!isFlipping) isFlipping = true;
+        if (!isFlipping) {
+            isFlipping = true;
+            isFlipped = true;
+        }
         Debug.Log($"{index}");
         gameManager.checkCard(index);
     }
 
     public void FlipCard(){
-        if (!isFlipping){
-            spriteRenderer.sprite = back; 
-            transform.localScale = pos[0];
+        if( isFlipped ){
+            Debug.Log( "123");
+            if (spriteRenderer.sprite != back ){
+                spriteRenderer.sprite = back; 
+                transform.localScale = pos[0];
+            }
+            else{
+                spriteRenderer.sprite = cards[0];
+                transform.localScale = pos[1];
+            }
         }
-        else{
-            spriteRenderer.sprite = cards[0];
-            transform.localScale = pos[1];
-        }
-
+        
     }
 
     public void setIndex( int index ){
@@ -71,5 +79,11 @@ public class Card : MonoBehaviour{
 
     public void setIsMatching( bool isMatching ){
         this.isMatching = isMatching;
+    }
+
+    public void setIsFlipping( bool isFlipping ){
+        this.isFlipping = isFlipping;
+        this.isFlipped = true;
+        this.currentRotation = 0;
     }
 }

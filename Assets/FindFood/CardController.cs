@@ -9,9 +9,10 @@ public class CardController : MonoBehaviour{
    
     public GameObject cardPrefab;
     private List<GameObject> list = new List<GameObject>();
-    public GameObject createCard( int pos , int i , int j){
-        Debug.Log($"{ -5 + 10 * (i%5) }, { -5 + 10 * pos%2} , {pos}");
-        Vector2 position = new( -8.7f + 1.5f * i ,  3.5f-2.3f* j) ;
+    private int[] num = new int[ 10 ];
+    public GameObject createCard( int pos ){
+        Debug.Log($"{ -5 + 10 * pos%5 }, { -5 + 10 * pos%2} , {pos}");
+        Vector2 position = new( -8.7f + 1.5f * (pos%5) ,  3.5f-2.3f* (pos%2) );
 
         GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
         newCard.SetActive(true);
@@ -21,15 +22,27 @@ public class CardController : MonoBehaviour{
         Card cardScript = newCard.GetComponent<Card>();
         cardScript.setIndex(pos);
 
+        num[pos] = list.Count;
         list.Add(newCard);
+        
         return newCard;
     }
 
     public void match( int indexA , int indexB ){
-        Card cardScript = list[indexA].GetComponent<Card>();
+        Debug.Log($"{num[indexA]},{num[indexB]}");
+        Card cardScript = list[num[indexA]].GetComponent<Card>();
         cardScript.setIsMatching(true);
-        cardScript = list[indexB].GetComponent<Card>();
+        cardScript = list[num[indexB]].GetComponent<Card>();
         cardScript.setIsMatching(true);
+    }
+
+    public void reset( int indexA , int indexB ){
+        Debug.Log("fds");
+        Debug.Log($"{num[indexA]},{num[indexB]}");
+        Card cardScript = list[num[indexA]].GetComponent<Card>();
+        cardScript.setIsFlipping(true);
+        cardScript = list[num[indexB]].GetComponent<Card>();
+        cardScript.setIsFlipping(true);
     }
 
 }

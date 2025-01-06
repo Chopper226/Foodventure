@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour{
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour{
 
                 while( check ){
                     if( card[rad] == null ){
-                        card[rad] = cardController.createCard( rad , i , j );
+                        card[rad] = cardController.createCard( rad );
                         check = false;
                     }
                     else rad = Random.Range( 0 , num*2 );
@@ -53,11 +54,22 @@ public class GameManager : MonoBehaviour{
         flippedCards.Add(index);
         
         if( flippedCards.Count == 2 ){
-            if( cardIndex[flippedCards[0]] == flippedCards[1] ) cardController.match(flippedCards[0] , flippedCards[1] );
-            //else resetCard();
+            if( cardIndex[flippedCards[0]] == flippedCards[1] ) {
+                Debug.Log( $"654   {flippedCards[0]}  ,  {flippedCards[1]}");
+                cardController.match(flippedCards[0] , flippedCards[1] );
+            }
+            else {
+                StartCoroutine(WaitAndDoSomething(flippedCards[0] , flippedCards[1]));
+                
+            }
             flippedCards = new List<int>();
         }
 
+    }
+
+    IEnumerator WaitAndDoSomething( int indexA , int indexB){
+        yield return new WaitForSeconds(1f); 
+        cardController.reset(indexA , indexB);
     }
 
 
