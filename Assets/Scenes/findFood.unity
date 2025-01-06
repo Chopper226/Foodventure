@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 1574725585}
   - component: {fileID: 1574725586}
   - component: {fileID: 1574725587}
+  - component: {fileID: 1574725589}
   - component: {fileID: 1574725588}
   m_Layer: 0
   m_Name: card
@@ -358,10 +359,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8958ae8e96e1f842a2856c4f24b6265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 1574725583}
+--- !u!114 &1574725589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574725583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaf0019332580a48aa72d0ca8106dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   cards:
   - {fileID: -7859449370574811303, guid: 15e3fb1d5adf9fa40bec21f31fcd0d64, type: 3}
   back: {fileID: 694762699390358691, guid: e469b621eb181194c8a246f461966609, type: 3}
-  cardPrefab: {fileID: 1574725583}
+  gameManager: {fileID: 1807164103}
 --- !u!1 &1807164101
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardController: {fileID: 1574725588}
+  cards: {fileID: 1574725589}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
