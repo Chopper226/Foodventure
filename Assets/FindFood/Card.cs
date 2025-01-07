@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class Card : MonoBehaviour{
     public Sprite back;
     
     private int index;
+    private int image;
     private bool isFlipped = false;  // 用來判斷卡片是否已翻轉
     private bool isFlipping = false;  // 用來判斷卡片是否正在翻轉
     private float flipSpeed = 2.0f;  // 翻轉速度
@@ -29,10 +31,10 @@ public class Card : MonoBehaviour{
 
     void Update(){
         if (isFlipping){
-            currentRotation = Mathf.Lerp(currentRotation, 180f, Time.deltaTime * flipSpeed);
+            currentRotation = Mathf.Lerp( currentRotation, 180f, Time.deltaTime * flipSpeed );
             transform.rotation = Quaternion.Euler(0, currentRotation, 0);
 
-            if (Mathf.Abs(currentRotation - 120f) < 1f){
+            if( Mathf.Abs(currentRotation - 120f) < 1f ){
                 FlipCard(); 
                 isFlipped = false;
                 
@@ -50,24 +52,24 @@ public class Card : MonoBehaviour{
     }
 
     void OnMouseDown(){
-        if (!isFlipping) {
-            isFlipping = true;
-            isFlipped = true;
+        if( gameManager.getCanPlay() ){
+            if (!isFlipping) {
+                isFlipping = true;
+                isFlipped = true;
+            }
+            gameManager.checkCard(index);
         }
-        Debug.Log($"{index}");
-        gameManager.checkCard(index);
     }
 
     public void FlipCard(){
         if( isFlipped ){
-            Debug.Log( "123");
             if (spriteRenderer.sprite != back ){
                 spriteRenderer.sprite = back; 
                 transform.localScale = pos[0];
             }
             else{
-                spriteRenderer.sprite = cards[0];
-                transform.localScale = pos[1];
+                spriteRenderer.sprite = cards[image];
+                transform.localScale = pos[image+1];
             }
         }
         
@@ -75,6 +77,10 @@ public class Card : MonoBehaviour{
 
     public void setIndex( int index ){
         this.index = index;
+    }
+
+    public void setImage ( int image ){
+        this.image = image;
     }
 
     public void setIsMatching( bool isMatching ){

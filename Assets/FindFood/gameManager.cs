@@ -15,13 +15,14 @@ public class GameManager : MonoBehaviour{
     public CardController cardController;
     public Card cards;
     private List<int> flippedCards;
+    private bool canPlay;
 
     void Start(){
-        card = new GameObject[num*2];
+        canPlay = true;
         cardIndex = new int[ num*2 ];
         initCard();
         flippedCards = new List<int>();
-        
+       // for( int i = 0 ; i<num*2 ; i++ ) cardIndex[i] = -1;
     }
 
     void initCard(){
@@ -33,8 +34,8 @@ public class GameManager : MonoBehaviour{
                 bool check = true;
 
                 while( check ){
-                    if( card[rad] == null ){
-                        card[rad] = cardController.createCard( rad );
+                    if( cardIndex[rad] == -1 ){
+                        cardController.createCard( rad , i );
                         check = false;
                     }
                     else rad = Random.Range( 0 , num*2 );
@@ -54,22 +55,30 @@ public class GameManager : MonoBehaviour{
         flippedCards.Add(index);
         
         if( flippedCards.Count == 2 ){
+            canPlay = false;
             if( cardIndex[flippedCards[0]] == flippedCards[1] ) {
-                Debug.Log( $"654   {flippedCards[0]}  ,  {flippedCards[1]}");
-                cardController.match(flippedCards[0] , flippedCards[1] );
+                StartCoroutine(matchCard(flippedCards[0] , flippedCards[1]));
             }
             else {
-                StartCoroutine(WaitAndDoSomething(flippedCards[0] , flippedCards[1]));
-                
+                StartCoroutine(resetCard(flippedCards[0] , flippedCards[1]));
             }
             flippedCards = new List<int>();
+            canPlay = true;
         }
-
     }
 
-    IEnumerator WaitAndDoSomething( int indexA , int indexB){
+    IEnumerator resetCard( int indexA , int indexB ){
         yield return new WaitForSeconds(1f); 
         cardController.reset(indexA , indexB);
+    }
+
+    IEnumerator matchCard( int indexA , int indexB ){
+        yield return new WaitForSeconds(1f); 
+        cardController.match(indexA , indexB);
+    }
+
+    public bool getCanPlay(){
+        return canPlay;
     }
 
 

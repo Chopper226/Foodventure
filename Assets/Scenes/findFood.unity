@@ -374,6 +374,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards:
   - {fileID: -7859449370574811303, guid: 15e3fb1d5adf9fa40bec21f31fcd0d64, type: 3}
+  - {fileID: -8777336865485261440, guid: c60bf5081e84629458073a63858efba0, type: 3}
+  - {fileID: 7451785128312375594, guid: f2c1eaf9c0fe2da49a9d1512736b4ce8, type: 3}
+  - {fileID: -6444940296795206775, guid: 9d58efc2b9f9fd348b11e4e8074c4454, type: 3}
+  - {fileID: -3336834250505641870, guid: cbce9bd1cd0845f45b6a45daffc8f0e4, type: 3}
   back: {fileID: 694762699390358691, guid: e469b621eb181194c8a246f461966609, type: 3}
   gameManager: {fileID: 1807164103}
 --- !u!1 &1807164101

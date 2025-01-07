@@ -10,8 +10,7 @@ public class CardController : MonoBehaviour{
     public GameObject cardPrefab;
     private List<GameObject> list = new List<GameObject>();
     private int[] num = new int[ 10 ];
-    public GameObject createCard( int pos ){
-        Debug.Log($"{ -5 + 10 * pos%5 }, { -5 + 10 * pos%2} , {pos}");
+    public GameObject createCard( int pos , int i){
         Vector2 position = new( -8.7f + 1.5f * (pos%5) ,  3.5f-2.3f* (pos%2) );
 
         GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
@@ -21,7 +20,7 @@ public class CardController : MonoBehaviour{
 
         Card cardScript = newCard.GetComponent<Card>();
         cardScript.setIndex(pos);
-
+        cardScript.setImage(i);
         num[pos] = list.Count;
         list.Add(newCard);
         
@@ -29,7 +28,6 @@ public class CardController : MonoBehaviour{
     }
 
     public void match( int indexA , int indexB ){
-        Debug.Log($"{num[indexA]},{num[indexB]}");
         Card cardScript = list[num[indexA]].GetComponent<Card>();
         cardScript.setIsMatching(true);
         cardScript = list[num[indexB]].GetComponent<Card>();
@@ -37,8 +35,6 @@ public class CardController : MonoBehaviour{
     }
 
     public void reset( int indexA , int indexB ){
-        Debug.Log("fds");
-        Debug.Log($"{num[indexA]},{num[indexB]}");
         Card cardScript = list[num[indexA]].GetComponent<Card>();
         cardScript.setIsFlipping(true);
         cardScript = list[num[indexB]].GetComponent<Card>();
