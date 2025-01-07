@@ -63,8 +63,8 @@ public class Card : MonoBehaviour{
     }
 
     void OnMouseDown(){
-        Debug.Log($"{gameManager.getCanPlay()}");
         if( spriteRenderer.sprite == back && gameManager.getCanPlay() && ( gameManager.getList() <2 )){
+            this.currentRotation = 0;
             isFlipping = true;
             isFlipped = true;
             gameManager.checkCard(index);
