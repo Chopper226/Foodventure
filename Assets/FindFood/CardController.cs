@@ -11,18 +11,17 @@ public class CardController : MonoBehaviour{
     private List<GameObject> list = new List<GameObject>();
     private int[] num = new int[ 20 ];
     public GameObject createCard( int pos , int i){
-        Vector2 position = new( -8.7f + 1.5f * (pos%5) ,  3.5f-2.3f* (pos%4) );
+        Vector2 position = new( -4f + 2f * (pos%5) ,  3.7f-2.5f* (pos%4) );
         
         GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
         newCard.SetActive(true);
         newCard.name = newCard.name.Replace( "(Clone)" , "" ).Trim();
-        newCard.transform.localScale = new Vector3(0.1f, 0.1f, -1);
+        newCard.transform.localScale = new Vector3(0.2f, 0.2f, -1);
 
         Card cardScript = newCard.GetComponent<Card>();
         cardScript.setIndex(pos);
         cardScript.setImage(i);
         num[pos] = list.Count;
-
 
         list.Add(newCard);
         return newCard;

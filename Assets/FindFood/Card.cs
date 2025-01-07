@@ -20,7 +20,7 @@ public class Card : MonoBehaviour{
     public GameManager gameManager;
     SpriteRenderer spriteRenderer;
     private Vector2[] pos = new Vector2[]{
-        new Vector2(0.1f, 0.1f), 
+        new Vector2(0.2f, 0.2f), 
         new Vector2(0.03f, 0.03f), 
         new Vector2(0.2f, 0.2f), 
         new Vector2(0.2f, 0.2f), 
@@ -40,6 +40,7 @@ public class Card : MonoBehaviour{
     }
 
     void Update(){
+        
         if (isFlipping){
             currentRotation = Mathf.Lerp( currentRotation, 180f, Time.deltaTime * flipSpeed );
             transform.rotation = Quaternion.Euler(0, currentRotation, 0);
