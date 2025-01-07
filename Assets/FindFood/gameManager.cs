@@ -20,9 +20,10 @@ public class GameManager : MonoBehaviour{
     void Start(){
         canPlay = true;
         cardIndex = new int[ num*2 ];
+        card = new GameObject[ num*2 ];
         initCard();
         flippedCards = new List<int>();
-       // for( int i = 0 ; i<num*2 ; i++ ) cardIndex[i] = -1;
+        for( int i = 0 ; i<num*2 ; i++ ) cardIndex[i] = -1;
     }
 
     void initCard(){
@@ -34,8 +35,9 @@ public class GameManager : MonoBehaviour{
                 bool check = true;
 
                 while( check ){
-                    if( cardIndex[rad] == -1 ){
-                        cardController.createCard( rad , i );
+                    //if( cardIndex[rad] == -1 ) cardController.createCard( rad , i );
+                    if( card[rad] == null ){
+                        card[rad] = cardController.createCard( rad , i );
                         check = false;
                     }
                     else rad = Random.Range( 0 , num*2 );
@@ -52,6 +54,8 @@ public class GameManager : MonoBehaviour{
     }
 
     public void checkCard( int index ){
+        if( flippedCards.Count == 1 && flippedCards[0] == index ) return;
+        
         flippedCards.Add(index);
         
         if( flippedCards.Count == 2 ){
@@ -62,24 +66,29 @@ public class GameManager : MonoBehaviour{
             else {
                 StartCoroutine(resetCard(flippedCards[0] , flippedCards[1]));
             }
-            flippedCards = new List<int>();
-            canPlay = true;
         }
     }
 
     IEnumerator resetCard( int indexA , int indexB ){
         yield return new WaitForSeconds(1f); 
         cardController.reset(indexA , indexB);
+        flippedCards = new List<int>();
+        canPlay = true;
     }
 
     IEnumerator matchCard( int indexA , int indexB ){
         yield return new WaitForSeconds(1f); 
-        cardController.match(indexA , indexB);
+        cardController.match(indexA , indexB); 
+        flippedCards = new List<int>();
+        canPlay = true;
     }
 
     public bool getCanPlay(){
         return canPlay;
     }
 
+    public void setCanPlay( bool canPlay ){
+        this.canPlay = canPlay;
+    }
 
 }

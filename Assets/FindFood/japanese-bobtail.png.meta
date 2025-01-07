@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      japanese-bobtail_0: 7451785128312375594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

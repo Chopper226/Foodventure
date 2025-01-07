@@ -22,6 +22,12 @@ public class Card : MonoBehaviour{
     private Vector2[] pos = new Vector2[]{
         new Vector2(0.1f, 0.1f), 
         new Vector2(0.03f, 0.03f), 
+        new Vector2(0.03f, 0.03f), 
+        new Vector2(0.03f, 0.03f), 
+        new Vector2(0.03f, 0.03f), 
+        new Vector2(0.03f, 0.03f), 
+        new Vector2(0.03f, 0.03f), 
+        new Vector2(0.03f, 0.03f), 
     };
 
     void Start(){
@@ -35,9 +41,10 @@ public class Card : MonoBehaviour{
             transform.rotation = Quaternion.Euler(0, currentRotation, 0);
 
             if( Mathf.Abs(currentRotation - 120f) < 1f ){
+                gameManager.setCanPlay(false);
                 FlipCard(); 
                 isFlipped = false;
-                
+                gameManager.setCanPlay(true);
             }
             else if( Mathf.Abs(currentRotation - 180f) < 1f ){
                 currentRotation = 180f;
@@ -52,13 +59,14 @@ public class Card : MonoBehaviour{
     }
 
     void OnMouseDown(){
-        if( gameManager.getCanPlay() ){
+        if( spriteRenderer.sprite == back && gameManager.getCanPlay()){
             if (!isFlipping) {
                 isFlipping = true;
                 isFlipped = true;
+                gameManager.checkCard(index);
             }
-            gameManager.checkCard(index);
         }
+        
     }
 
     public void FlipCard(){
@@ -71,9 +79,10 @@ public class Card : MonoBehaviour{
                 spriteRenderer.sprite = cards[image];
                 transform.localScale = pos[image+1];
             }
+            
         }
-        
     }
+
 
     public void setIndex( int index ){
         this.index = index;
@@ -87,7 +96,7 @@ public class Card : MonoBehaviour{
         this.isMatching = isMatching;
     }
 
-    public void setIsFlipping( bool isFlipping ){
+    public void setIsFlipping( bool isFlipping){
         this.isFlipping = isFlipping;
         this.isFlipped = true;
         this.currentRotation = 0;
