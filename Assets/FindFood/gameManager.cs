@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour{
     
     private int num = 10;
-    private GameObject[] card;
     private int[] cardIndex;
     public CardController cardController;
     public Card cards;
@@ -20,10 +19,9 @@ public class GameManager : MonoBehaviour{
     void Start(){
         canPlay = true;
         cardIndex = new int[ num*2 ];
-        card = new GameObject[ num*2 ];
+        for( int i = 0 ; i<num*2 ; i++ ) cardIndex[i] = -1;
         initCard();
         flippedCards = new List<int>();
-        for( int i = 0 ; i<num*2 ; i++ ) cardIndex[i] = -1;
     }
 
     void initCard(){
@@ -35,10 +33,10 @@ public class GameManager : MonoBehaviour{
                 bool check = true;
 
                 while( check ){
-                    //if( cardIndex[rad] == -1 ) cardController.createCard( rad , i );
-                    if( card[rad] == null ){
-                        card[rad] = cardController.createCard( rad , i );
+                    if( cardIndex[rad] == -1 ){
+                        cardController.createCard( rad , i );
                         check = false;
+                        cardIndex[rad] = rad;
                     }
                     else rad = Random.Range( 0 , num*2 );
                 }

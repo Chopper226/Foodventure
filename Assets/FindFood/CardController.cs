@@ -10,7 +10,7 @@ public class CardController : MonoBehaviour{
     public GameObject cardPrefab;
     private List<GameObject> list = new List<GameObject>();
     private int[] num = new int[ 20 ];
-    public GameObject createCard( int pos , int i){
+    public void createCard( int pos , int i){
         Vector2 position = new( -4f + 2f * (pos%5) ,  3.7f-2.5f* (pos%4) );
         
         GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
@@ -24,7 +24,6 @@ public class CardController : MonoBehaviour{
         num[pos] = list.Count;
 
         list.Add(newCard);
-        return newCard;
     }
 
     public void match( int indexA , int indexB ){

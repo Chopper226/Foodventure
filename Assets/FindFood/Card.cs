@@ -40,7 +40,7 @@ public class Card : MonoBehaviour{
     }
 
     void Update(){
-        
+
         if (isFlipping){
             currentRotation = Mathf.Lerp( currentRotation, 180f, Time.deltaTime * flipSpeed );
             transform.rotation = Quaternion.Euler(0, currentRotation, 0);
