@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour{
     
-    private int num = 5;
+    private int num = 10;
     private GameObject[] card;
     private int[] cardIndex;
     public CardController cardController;
@@ -60,12 +60,8 @@ public class GameManager : MonoBehaviour{
         
         if( flippedCards.Count == 2 ){
             canPlay = false;
-            if( cardIndex[flippedCards[0]] == flippedCards[1] ) {
-                StartCoroutine(matchCard(flippedCards[0] , flippedCards[1]));
-            }
-            else {
-                StartCoroutine(resetCard(flippedCards[0] , flippedCards[1]));
-            }
+            if( cardIndex[flippedCards[0]] == flippedCards[1] ) StartCoroutine(matchCard(flippedCards[0] , flippedCards[1]));
+            else StartCoroutine(resetCard(flippedCards[0] , flippedCards[1]));
         }
     }
 
@@ -89,6 +85,10 @@ public class GameManager : MonoBehaviour{
 
     public void setCanPlay( bool canPlay ){
         this.canPlay = canPlay;
+    }
+
+    public int getList(){
+        return flippedCards.Count;
     }
 
 }

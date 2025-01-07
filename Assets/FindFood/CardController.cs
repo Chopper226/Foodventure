@@ -9,9 +9,9 @@ public class CardController : MonoBehaviour{
    
     public GameObject cardPrefab;
     private List<GameObject> list = new List<GameObject>();
-    private int[] num = new int[ 10 ];
+    private int[] num = new int[ 20 ];
     public GameObject createCard( int pos , int i){
-        Vector2 position = new( -8.7f + 1.5f * (pos%5) ,  3.5f-2.3f* (pos%2) );
+        Vector2 position = new( -8.7f + 1.5f * (pos%5) ,  3.5f-2.3f* (pos%4) );
         
         GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
         newCard.SetActive(true);
@@ -22,6 +22,7 @@ public class CardController : MonoBehaviour{
         cardScript.setIndex(pos);
         cardScript.setImage(i);
         num[pos] = list.Count;
+
 
         list.Add(newCard);
         return newCard;
