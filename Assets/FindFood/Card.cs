@@ -23,15 +23,14 @@ public class Card : MonoBehaviour{
         new Vector2(0.2f, 0.2f), 
         new Vector2(0.03f, 0.03f), 
         new Vector2(0.2f, 0.2f), 
+        new Vector2(0.25f, 0.25f), 
         new Vector2(0.2f, 0.2f), 
         new Vector2(0.2f, 0.2f), 
         new Vector2(0.2f, 0.2f), 
         new Vector2(0.2f, 0.2f), 
-        new Vector2(0.2f, 0.2f), 
-        new Vector2(0.09f, 0.09f), 
-        new Vector2(0.2f, 0.2f), 
-        new Vector2(0.2f, 0.2f), 
-        new Vector2(0.2f, 0.2f), 
+        new Vector2(0.08f, 0.08f), 
+        new Vector2(0.25f, 0.25f), 
+        new Vector2(0.25f, 0.25f), 
     };
 
     void Start(){

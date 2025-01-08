@@ -468,8 +468,8 @@ MonoBehaviour:
   - {fileID: -3183756464830776683, guid: 71f60feae17f2d64581b80d2e9a8c425, type: 3}
   - {fileID: 383688922989568319, guid: 3e3e4f69bcbb42d428ae3c693b9d801b, type: 3}
   - {fileID: -3336834250505641870, guid: cbce9bd1cd0845f45b6a45daffc8f0e4, type: 3}
-  - {fileID: 383688922989568319, guid: 3e3e4f69bcbb42d428ae3c693b9d801b, type: 3}
-  - {fileID: 383688922989568319, guid: 3e3e4f69bcbb42d428ae3c693b9d801b, type: 3}
+  - {fileID: 9135130128162984572, guid: 12ec09f29a6f8284397ae79234066228, type: 3}
+  - {fileID: 1352961961597019730, guid: 4ace4f0a15ba7c941957c861ff14d359, type: 3}
   back: {fileID: -2911333886248218110, guid: 95b8286183fbe2440a21306f11e553cf, type: 3}
   gameManager: {fileID: 1807164103}
 --- !u!1 &1807164101
