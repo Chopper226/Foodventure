@@ -11,12 +11,13 @@ public class pointCounter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public static int score;
     public TextMeshProUGUI tmpText;
-    bool changeScence = false;
+    public static bool changeScence = false;
 
     void Start()
     {
         tmpText.text = "score: 0 \nTimer: 60s";
         changeScence = false;
+        score = 0;
         show();
     }
 
@@ -25,16 +26,11 @@ public class pointCounter : MonoBehaviour
         if (changeScence && Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("Settlement");
-            Camera newMainCamera = Camera.main;
-            if (newMainCamera != null)
-            {
-                newMainCamera.gameObject.SetActive(true);
-            }
         }
     }
 //pos 247,24
     private void show(){
-        if(score == 60){
+        if(score >= 80){
             tmpText.text="            success!\npress Space to continue";
             changeScence = true;
             RectTransform rectTransform = tmpText.GetComponent<RectTransform>();

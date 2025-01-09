@@ -13,13 +13,13 @@ public class GetCoin : MonoBehaviour
         if (success){
             coin = UnityEngine.Random.Range(100,0); 
             RectTransform rectTransform = tmpText.GetComponent<RectTransform>();
-            rectTransform.anchoredPosition = new Vector2(100, 200);
+            rectTransform.anchoredPosition = new Vector2(200, 200);
             PlayerPrefs.SetInt("Coin", coin);
-            tmpText.text = "                  Win!\nyou get: " + coin.ToString() + " dollars\nPress Space to return to the main map";
+            tmpText.text = "                      Win!\n            you get: " + coin.ToString() + " dollars\nPress Space to return to the main map";
         }else{
             coin = UnityEngine.Random.Range(100,0); 
             RectTransform rectTransform = tmpText.GetComponent<RectTransform>();
-            rectTransform.anchoredPosition = new Vector2(100, 200);
+            rectTransform.anchoredPosition = new Vector2(200, 200);
             PlayerPrefs.SetInt("Coin", -coin);
             tmpText.text = "                  Game Over!\n            you lose: -" + coin.ToString() + " dollars\nPress Space to return to the main map";
         }
@@ -33,7 +33,17 @@ public class GetCoin : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("getFruite");
+            ResetGameState();
+            SceneManager.LoadScene("getFruite", LoadSceneMode.Single);
         }
     }
+
+    void ResetGameState()
+    {
+        pointCounter.score = 0;
+        plate.timeCount = 0f;
+        plate.gameover = false;
+        orange.gameover = false;
+    }
+
 }
