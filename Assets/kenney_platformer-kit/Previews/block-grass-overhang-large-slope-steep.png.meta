@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-grass-overhang-large-slope-steep_0: -2477730871750557204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

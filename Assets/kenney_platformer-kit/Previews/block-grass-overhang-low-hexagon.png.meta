@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-grass-overhang-low-hexagon_0: 8365426838146982257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

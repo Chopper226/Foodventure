@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-grass-curve_0: -2455252744783859725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

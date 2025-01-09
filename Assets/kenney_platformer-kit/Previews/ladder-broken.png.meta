@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ladder-broken_0: 7699528705183346258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

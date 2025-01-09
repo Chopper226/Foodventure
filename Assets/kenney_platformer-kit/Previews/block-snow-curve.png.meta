@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-snow-curve_0: -8219488360780034188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

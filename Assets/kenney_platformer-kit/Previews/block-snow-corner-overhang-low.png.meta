@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-snow-corner-overhang-low_0: 2333256776014126501
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

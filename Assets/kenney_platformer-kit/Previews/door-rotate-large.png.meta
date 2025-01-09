@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      door-rotate-large_0: 8750894902935606038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

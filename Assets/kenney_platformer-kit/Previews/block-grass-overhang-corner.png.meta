@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-grass-overhang-corner_0: 5596326621873309444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

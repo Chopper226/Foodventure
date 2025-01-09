@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      platform-overhang_0: -4615525268209102604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

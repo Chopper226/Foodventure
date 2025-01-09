@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(MoveComponent))]
 
 public partial class Player : MonoBehaviour
@@ -46,5 +46,13 @@ public partial class Player : MonoBehaviour
         Sight();
 
         Attack();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene("2D"); //"切換場景名"
+        }
+
+
     }
+
 }

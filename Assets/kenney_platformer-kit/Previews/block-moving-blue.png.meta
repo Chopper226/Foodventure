@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-moving-blue_0: -5347472899467432295
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

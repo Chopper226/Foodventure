@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fence-low-corner-curved_0: -8135574156023765710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

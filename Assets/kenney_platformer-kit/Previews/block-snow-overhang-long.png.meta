@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-snow-overhang-long_0: 8241262634367411369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

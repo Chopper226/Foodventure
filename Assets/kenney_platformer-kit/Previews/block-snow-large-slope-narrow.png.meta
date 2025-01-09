@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-snow-large-slope-narrow_0: -3230036500626914952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      block-snow-corner_0: -241801726796971535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
