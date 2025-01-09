@@ -11,6 +11,9 @@ TagManager:
   - end
   - building
   - Ground
+  - Blade
+  - Door
+  - AnimalPlayer
   layers:
   - Default
   - TransparentFX
@@ -48,6 +51,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: back
     uniqueID: 3649765741
     locked: 0
@@ -57,5 +61,7 @@ TagManager:
   - name: front
     uniqueID: 1941160921
     locked: 0
+=======
+>>>>>>> main
   m_RenderingLayers:
   - Default
