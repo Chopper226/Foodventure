@@ -4,6 +4,13 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - orange
+  - bomb
+  - peach
+  - avocado
+  - end
+  - building
+  - Ground
   - Blade
   - Door
   - AnimalPlayer
@@ -14,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - ground
   - 
   - 
   - 
@@ -44,5 +51,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
+  - name: back
+    uniqueID: 3649765741
+    locked: 0
+  - name: middle
+    uniqueID: 2318471657
+    locked: 0
+  - name: front
+    uniqueID: 1941160921
+    locked: 0
+=======
+>>>>>>> main
   m_RenderingLayers:
   - Default
