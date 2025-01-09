@@ -16,12 +16,27 @@ public class GameManager : MonoBehaviour{
     private List<int> flippedCards;
     private bool canPlay;
 
+    public float timeRemaining ;
+    private bool isTimerRunning = false;
+
+    public Text Score;
+    public Text timerText;
+    public int score;
+
     void Start(){
         canPlay = true;
         cardIndex = new int[ num*2 ];
         for( int i = 0 ; i<num*2 ; i++ ) cardIndex[i] = -1;
         initCard();
         flippedCards = new List<int>();
+    }
+
+    void Update(){
+        if (timeRemaining > 0) {
+            timeRemaining -= Time.deltaTime;
+            UpdateTimerText();
+        }
+        Score.text = $"Score : {score}";
     }
 
     void initCard(){
@@ -72,6 +87,7 @@ public class GameManager : MonoBehaviour{
 
     IEnumerator matchCard( int indexA , int indexB ){
         yield return new WaitForSeconds(1f); 
+        score++;
         cardController.match(indexA , indexB); 
         flippedCards = new List<int>();
         canPlay = true;
@@ -89,4 +105,9 @@ public class GameManager : MonoBehaviour{
         return flippedCards.Count;
     }
 
+    void UpdateTimerText(){
+        int minutes = Mathf.FloorToInt(timeRemaining / 60);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
 }
