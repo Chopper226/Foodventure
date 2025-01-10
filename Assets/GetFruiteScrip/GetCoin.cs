@@ -10,17 +10,18 @@ public class GetCoin : MonoBehaviour
     public TextMeshProUGUI tmpText;
     private void show(){
         success = PlayerPrefs.GetInt("Success", 0) == 1;
+        int wallet = PlayerPrefs.GetInt("Coin", 0);
         if (success){
             coin = UnityEngine.Random.Range(100,0); 
             RectTransform rectTransform = tmpText.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector2(200, 200);
-            PlayerPrefs.SetInt("Coin", coin);
+            PlayerPrefs.SetInt("Coin", (coin+wallet));
             tmpText.text = "                      Win!\n            you get: " + coin.ToString() + " dollars\nPress Space to return to the main map";
         }else{
             coin = UnityEngine.Random.Range(100,0); 
             RectTransform rectTransform = tmpText.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector2(200, 200);
-            PlayerPrefs.SetInt("Coin", -coin);
+            PlayerPrefs.SetInt("Coin", (-coin+wallet));
             tmpText.text = "                  Game Over!\n            you lose: -" + coin.ToString() + " dollars\nPress Space to return to the main map";
         }
     }    void Start()

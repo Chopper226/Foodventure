@@ -1,5 +1,6 @@
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class player : MonoBehaviour
     float jumpTimer = 0f;
     float runTimer = 0f;
     public static bool gameover = false;
-    bool win = false;
+    public static bool win = false;
 
     private SpriteRenderer spriteRenderer;
 
@@ -24,7 +25,12 @@ public class player : MonoBehaviour
 
     void Update()
     {
+
         if(gameover){
+            if (order.changeScence && Input.GetKeyDown(KeyCode.E))
+            {
+                SceneManager.LoadScene("Settlement");
+            }
             return;
         }
         runTimer += Time.deltaTime;
