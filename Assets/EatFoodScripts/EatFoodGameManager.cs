@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour{
+public class EatFoodGameManager : MonoBehaviour{
     public GameObject platePrefab; 
     public Button[] button;
     public float plateSpeed ;   
