@@ -17,7 +17,7 @@ public class Card : MonoBehaviour{
 
     private bool isMatching = false;
     private float shrinkSpeed = 2f; // 縮放速度
-    public GameManager gameManager;
+    public FindFoodGameManager gameManager;
     SpriteRenderer spriteRenderer;
     private Vector2[] pos = new Vector2[]{
         new Vector2(0.2f, 0.2f), 

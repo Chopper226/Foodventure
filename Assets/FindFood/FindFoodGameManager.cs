@@ -7,7 +7,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour{
+public class FindFoodGameManager : MonoBehaviour{
     
     private int num = 10;
     private int[] cardIndex;
@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour{
     private bool canPlay;
 
     public float timeRemaining ;
-    private bool isTimerRunning = false;
 
     public Text Score;
     public Text timerText;
