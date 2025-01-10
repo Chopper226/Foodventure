@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343, y: 89}
+  m_AnchoredPosition: {x: -374, y: 89}
   m_SizeDelta: {x: 346.87, y: 159.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271012111
@@ -178,7 +178,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 38
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -279,8 +279,8 @@ Transform:
   m_GameObject: {fileID: 391560835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.84, y: 1.47, z: 105.25}
-  m_LocalScale: {x: 3.2, y: 3.2, z: 0}
+  m_LocalPosition: {x: 6.9649, y: 0.5344, z: 105.25}
+  m_LocalScale: {x: 2.846034, y: 2.7728903, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -861,7 +861,7 @@ MonoBehaviour:
   timeRemaining: 90
   Score: {fileID: 271012111}
   timerText: {fileID: 1275234595}
-  score: 0
+  score: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

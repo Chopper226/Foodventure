@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour{
             timeRemaining -= Time.deltaTime;
             UpdateTimerText();
         }
-        Score.text = $"Score : {score}";
+        Score.text = $"Remaining :\n {score}";
     }
 
     void initCard(){
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour{
 
     IEnumerator matchCard( int indexA , int indexB ){
         yield return new WaitForSeconds(1f); 
-        score++;
+        score--;
         cardController.match(indexA , indexB); 
         flippedCards = new List<int>();
         canPlay = true;
