@@ -77,9 +77,6 @@ PrefabInstance:
       addedObject: {fileID: 56916948575767732}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8725921473960205234}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1220415357189577864}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}
       insertIndex: -1
@@ -87,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8160482817840511873}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 113163312589975006}
   m_SourcePrefab: {fileID: 100100000, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}
 --- !u!1 &8252867177872229924 stripped
 GameObject:
@@ -120,27 +120,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!135 &8725921473960205234
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252867177872229924}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.17039749
-  m_Center: {x: -0.00001591444, y: 0.17038831, z: 0.0010407045}
 --- !u!114 &1220415357189577864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHalfPrefab: {fileID: 1035351807300823180, guid: e5ff2b4020d9765419a59657a631b5bc, type: 3}
   rightHalfPrefab: {fileID: 1035351807300823180, guid: e5ff2b4020d9765419a59657a631b5bc, type: 3}
+  isBomb: 0
   forceMagnitude: 5
 --- !u!114 &-8160482817840511873
 MonoBehaviour:
@@ -180,3 +160,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039ba66dcf1d03241851e081a9072dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &113163312589975006
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252867177872229924}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2022494331689553537, guid: c9f65c7457f9089438b8336c84da55d0, type: 3}

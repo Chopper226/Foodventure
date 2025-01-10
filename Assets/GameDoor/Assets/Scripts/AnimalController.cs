@@ -37,6 +37,7 @@ public class AnimalController : MonoBehaviour {
     [SerializeField] List<Transform> doors = new List<Transform>();
     [SerializeField] Generate generator;
     [SerializeField] CountdownTimer timer;
+    [SerializeField] DoorCameraControl doorCameraControl;
 #nullable enable
     private Command? currentCommand = null;
     private Queue<Command> commands = new Queue<Command>();
@@ -136,6 +137,11 @@ public class AnimalController : MonoBehaviour {
             return;
         }
 
+        // Move Camera
+        commands.Enqueue(new Command(() => {
+            doorCameraControl.UpdateTargetY(25 - 10 * (to / 3));
+        }));
+        
         // Move to another door
         commands.Enqueue(new Command(new Vector3(
             doors[to].position.x,

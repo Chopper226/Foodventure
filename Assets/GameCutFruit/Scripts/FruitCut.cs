@@ -3,7 +3,8 @@ using UnityEngine;
 public class Cut : MonoBehaviour
 {
     public GameObject leftHalfPrefab;  // 左半水果 3D 模型
-    public GameObject rightHalfPrefab; // 右半水果 3D 模型
+    public GameObject rightHalfPrefab; // 右半水果 3D 模型\
+    [SerializeField] bool isBomb = false;
     private Score score;
     public float forceMagnitude = 5f; // 切割後的力大小
 
@@ -16,8 +17,13 @@ public class Cut : MonoBehaviour
     {
         if (other.CompareTag("Blade")) // 檢測刀刃碰撞
         {
-            SliceFruit(); // 切割水果
-            score.AddScore(1); // 增加分數
+            if(!isBomb){
+                SliceFruit(); // 切割水果
+                score.AddScore(1); // 增加分數
+            }else{
+                score.AddScore(-3);
+            }
+
         }
     }
 

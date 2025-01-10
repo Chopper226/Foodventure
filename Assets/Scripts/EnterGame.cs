@@ -32,7 +32,7 @@ public class LevelTrigger : MonoBehaviour
     private void Update()
     {
         // 玩家在觸發區，且按下 "E" 鍵
-        if (isPlayerInZone && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInZone && Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             Debug.Log($"切換到關卡: {levelName}");
             SceneManager.LoadScene(levelName); // 切換場景

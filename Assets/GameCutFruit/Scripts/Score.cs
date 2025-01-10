@@ -27,11 +27,11 @@ public class Score : MonoBehaviour
     public void AddScore(int score)
     {
         this.score += score; // 增加分數
-        if(this.score >= 5){
+        if(this.score >= 15){
             resultText.gameObject.SetActive(true);
             resultText.text = "You Win!";
             isEnd = true;
-        }else if(this.score <= -3){
+        }else if(this.score <= -5){
             resultText.gameObject.SetActive(true);
             resultText.text = "You Lose!";
             isEnd = true;
